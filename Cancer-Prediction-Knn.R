@@ -90,16 +90,3 @@ CrossTable(cancer_test_labels,cancer_prediction_12,prop.chisq = FALSE)
 
 #Slightly beter result with k=12.
 #The Recall would be 90.4% and Precision would be 98%.
-
-#----------------------------------------------------------
-
-
-#Logistic regression.
-cancer_logistic_train <- data_normalized[train_index, ]
-View(cancer_logistic_train)
-dim(cancer_logistic_train)
-
-cancer_logistic_test <- data_normalized[-train_index, ]
-dim(cancer_logistic_test)
-
-logistic_model <- glm(diagnosis ~ ., data = cancer_logistic_train, family = binomial(link = 'logit'))
